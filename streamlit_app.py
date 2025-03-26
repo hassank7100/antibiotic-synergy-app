@@ -94,4 +94,7 @@ if st.button("Predict Synergy"):
     with torch.no_grad():
         # Calculate the predicted synergy probability using the decode function
         prob = decode(embeddings, drug_i, drug_j)
+        # Determine label based on a threshold (0.5)
+        label = "Synergistic ✅" if prob.item() > 0.5 else "Not Synergistic ❌"
         st.write(f"Predicted synergy probability between Drug {drug_i} and Drug {drug_j}: **{prob.item():.4f}**")
+        st.write(f"Prediction: **{label}**")
