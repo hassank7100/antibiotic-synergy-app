@@ -16,6 +16,31 @@ import numpy as np
 import random
 from torch_geometric.nn import GCNConv
 
+# Define a dictionary mapping drug indices to antibiotic names.
+drug_names = {
+    0: "Amoxicillin",
+    1: "Ceftriaxone",
+    2: "Ciprofloxacin",
+    3: "Gentamicin",
+    4: "Meropenem",
+    5: "Imipenem",
+    6: "Piperacillin/Tazobactam",
+    7: "Colistin",
+    8: "Aztreonam",
+    9: "Levofloxacin",
+    10: "Tigecycline",
+    11: "Ceftazidime",
+    12: "Ertapenem",
+    13: "Ampicillin-Sulbactam",
+    14: "Doripenem",
+    15: "Cefepime",
+    16: "Amikacin",
+    17: "Trimethoprim-Sulfamethoxazole",
+    18: "Ticarcillin-Clavulanate",
+    19: "Nitrofurantoin"
+}
+
+
 # ---------------------------
 # Define the same GNN Model as in training
 # ---------------------------
@@ -96,5 +121,11 @@ if st.button("Predict Synergy"):
         prob = decode(embeddings, drug_i, drug_j)
         # Determine label based on a threshold (0.5)
         label = "Synergistic ✅" if prob.item() > 0.5 else "Not Synergistic ❌"
-        st.write(f"Predicted synergy probability between Drug {drug_i} and Drug {drug_j}: **{prob.item():.4f}**")
+        
+        # Get the drug names from the dictionary
+        drug_i_name = drug_names.get(drug_i, f"Drug {drug_i}")
+        drug_j_name = drug_names.get(drug_j, f"Drug {drug_j}")
+        
+        # Display the result with drug names
+        st.write(f"Predicted synergy probability between **{drug_i_name}** (Drug {drug_i}) and **{drug_j_name}** (Drug {drug_j}): **{prob.item():.4f}**")
         st.write(f"Prediction: **{label}**")
