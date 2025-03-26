@@ -106,8 +106,7 @@ with torch.no_grad():
 # ---------------------------
 st.title("AI-Powered Antibiotic Synergy Predictor for Klebsiella pneumoniae")
 
-st.write("""
-This app uses a Graph Neural Network (GNN) to predict the synergy between antibiotics specifically for combating *Klebsiella pneumoniae*—a major drug-resistant pathogen.
+st.write(""" This app uses a Graph Neural Network (GNN) to predict the synergy between antibiotics specifically for combating *Klebsiella pneumoniae*—a major drug-resistant pathogen.
 Enter the indices (0 to 19) for two drugs to see the predicted synergy probability.
 """)
 
