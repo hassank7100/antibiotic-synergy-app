@@ -1,6 +1,6 @@
---find-links https://data.pyg.org/whl/torch-2.0.1+cpu.html
+--find-links https://data.pyg.org/whl/torch-2.2.2+cpu.html
 streamlit==1.44.0
-torch==2.0.1
-torch-scatter==2.0.9
+torch==2.2.2
+torch-scatter==2.1.2
 torch-sparse==0.6.18
-torch-geometric==2.2.1
+torch-geometric==2.6.1
