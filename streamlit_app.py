@@ -104,11 +104,13 @@ with torch.no_grad():
 # ---------------------------
 # Build the Streamlit Web App
 # ---------------------------
-st.title("AI-Powered Antibiotic Synergy Predictor")
+st.title("AI-Powered Antibiotic Synergy Predictor for Klebsiella pneumoniae")
 
 st.write("""
-This app uses a Graph Neural Network (GNN) to predict the synergy between two drugs.
-Enter the indices (0 to 19) for two drugs to see the predicted synergy probability.
+This app uses a Graph Neural Network (GNN) to predict whether two antibiotics will work synergistically 
+against **_Klebsiella pneumoniae_**, a high-priority drug-resistant superbug. 
+
+Select two antibiotics to evaluate the likelihood of synergy based on learned patterns.
 """)
 
 
