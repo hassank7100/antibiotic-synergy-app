@@ -1,5 +1,5 @@
 streamlit
 torch==2.6.0
-torch-scatter==2.1.2
-torch-sparse==0.6.18
+torch-scatter @ https://data.pyg.org/whl/torch-2.6.0+cpu/torch_scatter-2.1.2-cp312-cp312-linux_x86_64.whl
+torch-sparse @ https://data.pyg.org/whl/torch-2.6.0+cpu/torch_sparse-0.6.18-cp312-cp312-linux_x86_64.whl
 torch-geometric==2.6.1
